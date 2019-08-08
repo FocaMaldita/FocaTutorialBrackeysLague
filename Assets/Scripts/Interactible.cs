@@ -5,6 +5,7 @@ using UnityEngine;
 public class Interactible : MonoBehaviour
 {
     public float radius = 3f;
+    public Transform interactionTransform;
     public bool isFocused = false;
     public bool hasInteracted = false;
     public Transform player;
@@ -35,6 +36,9 @@ public class Interactible : MonoBehaviour
     }
 
     void OnDrawGizmosSelected(){
+        if(interactionTransform == null){
+            interactionTransform = transform;
+        }
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, radius);
     }
