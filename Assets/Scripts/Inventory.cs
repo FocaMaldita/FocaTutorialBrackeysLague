@@ -16,6 +16,8 @@ public class Inventory : MonoBehaviour
     }
     #endregion
 
+    public delegate void OnItemChanged();
+    public OnItemChanged onItemChangedCallback;
     public int sizeOfInventory = 20;
     public List<Item> items = new List<Item>();
 
@@ -26,12 +28,17 @@ public class Inventory : MonoBehaviour
                 return false;
             }
             items.Add(item);
-            return true;
+            if(onItemChangedCallback != null){
+                onItemChangedCallback.Invoke();
+            }
         }
-        return false;
+        return true;
     }
 
     public void Remove(Item item){
+        if(onItemChangedCallback != null){
+            onItemChangedCallback.Invoke();
+        }
         items.Remove(item);
     }
 }
