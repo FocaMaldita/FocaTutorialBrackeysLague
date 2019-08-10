@@ -26,7 +26,7 @@ public class PlayerMotor : MonoBehaviour
     }
 
     public void FollowTarget(Interactible toBeFollowed){
-        agent.stoppingDistance = toBeFollowed.radius * 0.8f;
+        agent.stoppingDistance = toBeFollowed.radius * 1f;
         agent.updateRotation = false;
         target = toBeFollowed.interactionTransform;
     }

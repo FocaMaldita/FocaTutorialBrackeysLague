@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: FloatingBall
   m_EditorClassIdentifier: 
   itemName: Floating Ball
+  itemItself: {fileID: 2051363470953941270, guid: f80dec6e67a5e1849adbdb8770655582,
+    type: 3}
   itemDescription: A dull, sad, floating ball
   icon: {fileID: 21300000, guid: 083594c701577bb46b0e2dd744dd17de, type: 3}
   isDefault: 0
